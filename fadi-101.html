@@ -1,75 +1,214 @@
 <!DOCTYPE html>
-<html lang="it">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Il Mio Curriculum</title>
+    <title>Curriculum Vitae</title>
     <style>
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background: linear-gradient(to bottom, #000, #fff);
+            background: linear-gradient(to bottom, #4a148c, #e53935); /* Deep purple to red */
+            color: #fff;
             display: flex;
             flex-direction: column;
             align-items: center;
+            animation: gradientMove 10s ease infinite; /* Added animation */
+            background-size: 200% 200%; /* Ensure gradient covers larger area */
         }
 
-        .header, .profile, .section {
+        @keyframes gradientMove {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        .header {
             width: 80%;
             margin: 20px auto;
-            background-color: #fff;
+            background-color: rgba(255, 255, 255, 0.1);
             padding: 20px;
             border-radius: 10px;
-            box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+            text-align: center;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .header h1{
+             color: #fff;
+        }
+
+        .profile, .section {
+            width: 80%;
+            margin: 20px auto;
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
             box-sizing: border-box;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
         }
 
         .profile img {
             width: 150px;
             height: 150px;
             border-radius: 50%;
+            border: 5px solid #fff;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
         }
 
         .profile h1, .profile h2, .section h2 {
             text-align: center;
+            color: #fff;
+            font-weight: bold;
+        }
+
+        .profile h2 {
+            margin-bottom: 20px;
+            color: #eee;
         }
 
         .profile p, .section p {
-            text-indent: 50px;
+            text-indent: 0;
+            line-height: 1.7;
+            color: #ddd;
+            text-align: justify;
+        }
+       .section ul{
+            list-style-type: disc;
+            padding-left: 20px;
+       }
+        .section ul li{
+             line-height: 1.7;
+            color: #ddd;
+        }
+
+        .contact {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .contact-info {
+            margin-bottom: 20px;
+        }
+
+        .contact-info p {
+            font-size: 1.1em;
+            color: #fff;
+        }
+
+        .contact-info a {
+            color: #ffdb58;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+
+        .contact-image {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            background-size: cover;
+            background-position: center;
+            margin-top: 20px;
+            border: 5px solid #fff;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        footer {
+            background-color: rgba(255, 255, 255, 0.1);
+            color: #fff;
+            text-align: center;
+            padding: 15px;
+            margin-top: 20px;
+            width: 100%;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+        }
+        @media (max-width: 768px) {
+            .header, .profile, .section {
+                width: 95%;
+            }
+            .contact {
+                flex-direction: column;
+                align-items: center;
+            }
+            .contact-image {
+                margin-top: 20px;
+            }
         }
     </style>
 </head>
 <body>
     <div class="header">
-        <h1>Il Mio Curriculum</h1>
+        <h1>Curriculum Vitae</h1>
     </div>
     <div class="profile">
-        <img src="il-tuo-url-immagine" alt="Il Tuo Nome">
-        <h1>Il Tuo Nome</h1>
-        <h2>Titolo del Lavoro</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a diam lectus. Sed sit amet ipsum mauris. Maecenas congue ligula ac quam viverra nec consectetur ante hendrerit.</p>
+        <img src="https://placehold.co/150x150/ffffff/000000?text=Your+Name&font=Montserrat" alt="Your Name">
+        <h1>Your Name</h1>
+        <h2>Job Title</h2>
+        <p>I am [Your Name] and I am a [Your Profession]. I am passionate about [Your Interests] and I have experience in [Your Skills].</p>
     </div>
     <div class="section">
-        <h2>Educazione</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a diam lectus. Sed sit amet ipsum mauris. Maecenas congue ligula ac quam viverra nec consectetur ante hendrerit.</p>
+        <h2>Education</h2>
+        <p>
+            <strong>Degree in [Degree Name]</strong><br>
+            [University Name] - [Years of Study]<br>
+            Relevant Courses: [List of Relevant Courses]
+        </p>
+        <ul>
+            <li>[School/Course Name], [Years]</li>
+            <li>[School/Course Name], [Years]</li>
+        </ul>
     </div>
     <div class="section">
-        <h2>Esprienza</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a diam lectus. Sed sit amet ipsum mauris. Maecenas congue ligula ac quam viverra nec consectetur ante hendrerit.</p>
+        <h2>Work Experience</h2>
+        <p>
+            <strong>[Job Title]</strong><br>
+            [Company Name] - [Years of Employment]<br>
+            Role Description: [Description of your responsibilities and achievements]
+        </p>
+        <ul>
+            <li>[Job Title], [Company Name], [Years]</li>
+            <li>[Job Title], [Company Name], [Years]</li>
+        </ul>
+    </div>
+     <div class="section">
+        <h2>Skills</h2>
+        <ul>
+            <li><strong>Programming Languages:</strong> [Programming Languages Known]</li>
+            <li><strong>Frameworks/Technologies:</strong> [Frameworks and Technologies Used]</li>
+             <li><strong>Tools:</strong> [Tools Used]</li>
+            <li><strong>Languages:</strong> [Languages Spoken and Proficiency Level]</li>
+            <li><strong>Other Skills:</strong> [Other Relevant Skills]</li>
+        </ul>
     </div>
     <div class="section contact">
         <div class="contact-info">
-            <h2>Contattami</h2>
-            <p>Email: la-tua-email@example.com</p>
-            <p>Telefono: 123-456-7890</p>
-            <p>LinkedIn: <a href="il-tuo-linkedin-url">Il tuo LinkedIn</a></p>
+            <h2>Contact Me</h2>
+            <p>Email: your-email@example.com</p>
+            <p>Phone: 123-456-7890</p>
+            <p>LinkedIn: <a href="https://www.linkedin.com/in/your-profile">Your LinkedIn</a></p>
+            <p>Website: <a href="https://your-website.com">your-website.com</a></p>
         </div>
-        <div class="contact-image" style="background-image: url('il-tuo-url-immagine');"></div>
+        <div class="contact-image" style="background-image: url('https://placehold.co/150x150/ffffff/000000?text=Contact&font=Montserrat');"></div>
     </div>
 
     <footer>
-        <p>© 2022 Il tuo nome. Tutti i diritti riservati.</p>
+        <p>© 2024 Your Name. All rights reserved.</p>
     </footer>
 </body>
 </html>
